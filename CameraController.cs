@@ -15,17 +15,17 @@ public class CameraController : MonoBehaviour {
     private Vector2 min;
     private Vector2 max;
 
-	// Use this for initialization
-	void Start () 
+    // Use this for initialization
+    void Start () 
     {
         player = FindObjectOfType<NewPlayerController>().transform;
-	}
+    }
 	
 	// Update is called once per frame
-	void Update () 
+    void Update () 
     {
-        min = cameraBounds.bounds.min;
-        max = cameraBounds.bounds.max;
+    	min = cameraBounds.bounds.min;
+	max = cameraBounds.bounds.max;
 
         var x = transform.position.x;
 
@@ -41,5 +41,5 @@ public class CameraController : MonoBehaviour {
         x = Mathf.Clamp(x, min.x + cameraHalfWidth, max.x - cameraHalfWidth);
         transform.position = new Vector3(x, transform.position.y, transform.position.z);
         leftBorder.transform.position = new Vector2(x-cameraHalfWidth, transform.position.y);
-	}
+    }
 }
